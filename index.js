@@ -1,21 +1,24 @@
 const Koa = require('koa');
-const startCrawl = require("./spider");
+const route = require('koa-route')
 
-const data = require('./data/2018-8-25.json');
+const startCrawl = require('./spider');
+const util = require('./util');
 
-
-const keys = Object.keys(data);
-console.log(keys.length);
+const DATA1 = require('./data/2018-8-25.json');
+const DATA2 = require('./data/2018-8-30.json');
 
 const app = new Koa();
 
 // startCrawl();
+util.diffData(DATA1, DATA2);
+console.log(util.getAverage(DATA1));
 
 const main = ctx => {
-  ctx.response.body = data;
+  ctx.response.body = '<H1>HELLO</H1>';
 };
 
-app.use(main);
+app.use(route.get('/', main));
 
 app.listen(3000);
-console.info('server start in 3000 port')
+
+console.info('server start in 3000 port');

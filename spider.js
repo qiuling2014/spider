@@ -124,6 +124,7 @@ function parsePage(path) {
 }
 // 数据格式化
 function parseData(arr) {
+  console.log(arr.length);
   const obj = {};
   arr.forEach((item) => {
     if (obj[item.houseId]) {
@@ -145,4 +146,4 @@ function writeFile(data) {
   });
 }
 
-module.exports  = startCrawl;
+module.exports = startCrawl;
