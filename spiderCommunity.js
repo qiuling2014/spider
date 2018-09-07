@@ -1,6 +1,6 @@
 const Crawler = require("crawler");
 const fs = require("fs");
-const colors = require( "colors")
+const colors = require( "colors");
 
 const URL = 'https://gz.ke.com/ershoufang/pg';
 

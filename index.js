@@ -1,13 +1,16 @@
 const Koa = require('koa');
 const route = require('koa-route')
 
-const startCrawl = require('./spiderCommunity');
+const startCrawl = require('./spiderHouse');
 const util = require('./util');
 
 const DATA1 = require('./data/2018-8-25.json');
 const DATA2 = require('./data/2018-8-31.json');
+const DATA3 = require('./data/2018-9-7.json');
 
 const app = new Koa();
+
+console.log( Object.keys(DATA3).length)
 
 startCrawl();
 // util.diffData(DATA1, DATA2);
