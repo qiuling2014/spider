@@ -25,11 +25,11 @@ function diffData(data1, data2) {
     const data1_unitPrice = data1[key].unitPrice;
     const data2_unitPrice = data2[key].unitPrice;
     if (data1_unitPrice > data2_unitPrice) {
-      console.log(`单价下跌↓，由${data1_unitPrice}下降至${data2_unitPrice}，总价：${data1_totalPrice} => ${data2_totalPrice}，跌幅${ ((data1_unitPrice - data2_unitPrice)/data1_unitPrice * 100).toFixed(2) + '%' }`.green);
+      console.log(`${data2[key].houseId} ${data2[key].region} ${data2[key].community}：单价下跌↓，由${data1_unitPrice}下降至${data2_unitPrice}，总价：${data1_totalPrice} => ${data2_totalPrice}，跌幅${ ((data1_unitPrice - data2_unitPrice)/data1_unitPrice * 100).toFixed(2) + '%' }`.green);
       downCount++
       downArr.push(item);
     } else {
-      console.log(`单价上涨↑，由${data1_unitPrice}上涨至${data2_unitPrice}，总价：${data1[key].totalPrice} => ${data2[key].totalPrice}`.red);    
+      console.log(`${data2[key].houseId} ${data2[key].region} ${data2[key].community}：单价上涨↑，由${data1_unitPrice}上涨至${data2_unitPrice}，总价：${data1[key].totalPrice} => ${data2[key].totalPrice}`.red);    
       upCount++;
       downArr.push(item);    
     }
